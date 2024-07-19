@@ -52,20 +52,27 @@ while play_again.lower() == "yes":
 
 # Exercise 3/1
 number: int = int(input("Please enter a number: "));
-for i in range(1, number + 1):
-    for j in range(1, i + 1):
-        print(j, end=" ");
-    print();
+if number > 0:
+    for i in range(1, number + 1):
+        for j in range(1, i + 1):
+            print(j, end=" ");
+        print();
 
-for i in range(1, number):
-    for j in range(1, number - i + 1):
-        print(j, end=" ");
-    print();
+    for i in range(1, number):
+        for j in range(1, number - i + 1):
+            print(j, end=" ");
+        print();
+else:
+    print("The number must be greater then 0")
 
 # Exercise 3/2
-stars: int = int(input("Please enter a number of stars: "));
-while stars % 2 == 0:
-    stars: int = int(input("Please enter an odd number of stars: "));
+while True:
+    stars: int = int(input("Please enter a number of stars: "));
+    if stars > 0 and stars % 2 != 0:
+        break
+    else:
+        print("The number of stars must be positive and odd: ");
+
 height = (stars + 1) // 2;
 for i in range(1, height + 1):
     print(" " * (height - i) + "*" * (2 * i - 1));
@@ -74,19 +81,20 @@ for i in range(1, height + 1):
 movies: list[str] = ["Pulp Fiction", "Fight Club", "The Green Mile"];
 movies.append("The Terminator");
 movies.insert(0, "The Pianist");
-print(len(movies));
+print(f"The length of the movies list is: {len(movies)}");
+print(f"Movies list: {movies}");
 
 numbers: list[int] = [];
 for i in range(1, 11):
     rnd_int: int = random.randint(1, 100);
     numbers.append(rnd_int);
-print(numbers);
+print(f"Random numbers list: {numbers}");
 
 boolean: list[bool] = [];
 for i in range(1, 11):
     rnd_bool: bool = random.choice([True, False]);
     boolean.append(rnd_bool);
-print(boolean);
+print(f"Random booleans list: {boolean}");
 
 # Bonus Questions
 random_word: str = "";
