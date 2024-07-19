@@ -33,9 +33,9 @@ else:
     print(f"The last negative number you enter is: {last_negative_num}");
 
 # Exercise 2
-count_guess_attempts: int = 0;
 play_again: str = "yes";
 while play_again.lower() == "yes":
+    count_guess_attempts: int = 0;
     rnd: int = random.randint(1, 100);
     while True:
         user_number: int = int(input("Please guess a number: "));
